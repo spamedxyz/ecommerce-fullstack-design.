@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce-fullstack-design",
+  "version": "1.0.0",
+  "description": "Full-stack eCommerce web application with React, Express, and MongoDB",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client && npm install --prefix netlify/functions",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "check:netlify": "npm run build && node scripts/check-netlify.mjs",
+    "deploy:netlify": "npm run install:all && npm run check:netlify && npx netlify-cli deploy --dir=client/dist --functions=netlify/functions --prod",
+    "seed": "npm run seed --prefix server",
+    "start": "npm start --prefix server",
+    "netlify:dev": "npx netlify-cli dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": ["ecommerce", "react", "express", "mongodb"],
+  "license": "MIT"
+}
