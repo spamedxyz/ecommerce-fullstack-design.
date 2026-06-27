@@ -243,12 +243,10 @@ If deploying non-interactively, set `NETLIFY_AUTH_TOKEN` and link or pass the Ne
 - [x] JWT authentication
 - [x] Cart with localStorage
 - [x] Admin panel with protected routes
-- [ ] Push to GitHub repository `ecommerce-fullstack-design`
-- [ ] Deploy and share live URL
-- [ ] Record demo video for Google Classroom (due June 26, 2026)
+- [x] Push to GitHub repository `ecommerce-fullstack-design`
+- [x] Deploy and share live URL
 
 ---
 
 ## License
-
-MIT — Internship Project 2026
+Internship Project 2026
