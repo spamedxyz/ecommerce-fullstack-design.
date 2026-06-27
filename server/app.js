@@ -2,14 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import authRoutes from './routes/auth.js';
 import productRoutes from './routes/products.js';
 
 dotenv.config();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -43,7 +39,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 
 if (process.env.NODE_ENV === 'production' && !process.env.NETLIFY) {
-  const clientDist = path.join(__dirname, '../client/dist');
+  const clientDist = path.join(process.cwd(), 'client/dist');
   app.use(express.static(clientDist));
   app.get('*', (_req, res) => {
     res.sendFile(path.join(clientDist, 'index.html'));
